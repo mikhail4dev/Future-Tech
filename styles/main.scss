@@ -1,0 +1,6 @@
+//Подключаем именно в таком порядке
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
