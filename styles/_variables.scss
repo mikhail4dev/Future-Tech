@@ -18,6 +18,10 @@
   --container-width: #{rem(1600)};
   --container-padding-x: #{rem(16)};
 
+  --border: #{rem(1)} solid var(--color-dark-15);
+
+  --border-radius-small: #{rem(10)};
+
   --transition-duration: 0.2s;
 
   @include laptop {
