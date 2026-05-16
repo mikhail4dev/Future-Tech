@@ -29,6 +29,12 @@
 @use './blocks/tile';
 @use './blocks/card';
 
+//Section Blog
+@use './blocks/tabs';
+@use './blocks/person-card';
+@use './blocks/blog-actions';
+@use './blocks/blog-card';
+
 //Временно скрываем готовые секции
 .header,
 main > *:not(:last-child),
