@@ -5,6 +5,7 @@
 @use 'utils';
 @use 'globals';
 
+//Header
 @use './blocks/icon';
 @use './blocks/logo';
 @use './blocks/button';
@@ -14,8 +15,23 @@
 @use './blocks/soc1als';
 @use './blocks/footer';
 
+//Section Hero
 @use './blocks/metrics';
 @use './blocks/team';
 @use './blocks/resources-preview';
 @use './blocks/advantage-card';
 @use './blocks/hero';
+
+//Section Feature
+@use './blocks/tag';
+@use './blocks/section';
+@use './blocks/list';
+@use './blocks/tile';
+@use './blocks/card';
+
+//Временно скрываем готовые секции
+.header,
+main > *:not(:last-child),
+.footer {
+  display: none !important;
+}
