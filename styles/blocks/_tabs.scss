@@ -50,8 +50,8 @@
     }
   }
 
-  &__contents {
-    &:has(.is-active) {
+  &__content {
+    &:not(.is-active) {
       display: none;
     }
 
