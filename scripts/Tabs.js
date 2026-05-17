@@ -48,16 +48,77 @@ class Tabs {
     })
   }
 
+  activateTab(newTabIndex){
+    this.state.activeTabIndex = newTabIndex
+    this.buttonElements[newTabIndex].focus()
+  }
+
+  previousTab = () => {
+    const newTabIndex = this.state.activeTabIndex === 0
+      ? this.limitTabsIndex
+      : this.state.activeTabIndex - 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  nextTab = () => {
+    const newTabIndex = this.state.activeTabIndex === this.limitTabsIndex
+      ? 0
+      : this.state.activeTabIndex + 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  firstTab = () => {
+    this.activateTab(0)
+  }
+
+  lastTab = () => {
+    this.activateTab(this.limitTabsIndex)
+  }
+
   onButtonClick(buttonIndex) {
     this.state.activeTabIndex = buttonIndex
     this.updateUI()
 
   }
 
+  onKeyDown = (event) => {
+    const { code, metaKey } = event
+
+    const action = {
+      ArrowLeft: this.previousTab,
+      ArrowRight: this.nextTab,
+      Home: this.firstTab,
+      End: this.lastTab,
+
+    }[code]
+
+    const isMacHomeKey = metaKey && code === 'ArrowLeft'
+
+    if (isMacHomeKey) {
+      this.firstTab()
+      this.updateUI()
+      return
+    }
+
+    const isMacEndKey = metaKey && code === 'ArrowRight'
+
+    if (isMacEndKey) {
+      this.lastTab()
+      this.updateUI()
+      return
+    }
+
+    action?.()
+    this.updateUI()
+  }
+
   bindEvents() {
     this.buttonElements.forEach((buttonElement, index) => {
       buttonElement.addEventListener('click', () => this.onButtonClick(index))
     })
+    this.rootElement.addEventListener('keydown', this.onKeyDown)
   }
 }
 
