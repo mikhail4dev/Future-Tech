@@ -38,6 +38,11 @@
 //Section Resources
 @use './blocks/download-info';
 
+//Section Reviews
+@use './blocks/bordered-grid';
+@use './blocks/rating-view';
+@use './blocks/review-card';
+
 //Временно скрываем готовые секции
 .header,
 main > *:not(:last-child),
