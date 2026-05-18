@@ -47,6 +47,13 @@
 @use './blocks/about-card';
 @use './blocks/about';
 
+//Page News
+//Section Hero Alt
+@use './blocks/hero-alt';
+@use './blocks/summary';
+@use './blocks/news-card';
+@use './blocks/news';
+
 //Временно скрываем готовые секции
 .header,
 main > *:not(:last-child),
