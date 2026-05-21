@@ -54,6 +54,10 @@
 @use './blocks/news-card';
 @use './blocks/news';
 
+//Section Videos
+@use './blocks/video-player';
+@use './blocks/video-card';
+
 //Временно скрываем готовые секции
 .header,
 main > *:not(:last-child),
