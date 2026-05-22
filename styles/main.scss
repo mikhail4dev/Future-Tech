@@ -58,6 +58,12 @@
 @use './blocks/video-player';
 @use './blocks/video-card';
 
+//Page Blog
+//Section Blog Details
+@use './blocks/table-of-contents';
+@use './blocks/expandable-content';
+@use './blocks/blog-details';
+
 //Временно скрываем готовые секции
 .header,
 main > *:not(:last-child),
